@@ -35,7 +35,9 @@ def weather() -> str:
 
 @app.route('/random', methods=SLACKMETHODS)
 def randomint() -> str:
-    return f"A random number between one and ten is {random.randint(1,10)}"
+    minimum: int = 1
+    maximum: int = 10
+    return f"A random number between {minimum} and {maximum} is {random.randint(minimum,maximum)}"
 
 if __name__ == "__main__":
     app.run(debug=True)  
