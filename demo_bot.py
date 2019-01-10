@@ -1,3 +1,7 @@
+"""
+is demo bot
+"""
+
 from flask import Flask, request
 
 app : Flask = Flask(__name__)
