@@ -7,12 +7,12 @@ SLACKMETHODS = ['GET', 'POST']
 def home():
     return "Hello World"
 
-@app.route('/greet', methods=SLACKMETHODS):
+@app.route('/greet', methods=SLACKMETHODS)
 def greet():
     return f"hello {request.values.get('text')}"
 
-@app.route('/weather', methods=SLACKMETHODS):
-def greet():
+@app.route('/weather', methods=SLACKMETHODS)
+def weather():
     temp = request.values.get('text')
     if int(temp) > 30:
         print("it's so hot")
