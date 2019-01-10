@@ -1,0 +1,7 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontFamily": "Source Code Pro, Consolas, 'Courier New', monospace",
+    "editor.fontSize" : 22,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+}
