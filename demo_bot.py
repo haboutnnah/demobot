@@ -4,6 +4,7 @@ is demo bot
 
 from flask import Flask, request
 import random
+from mpmath import mp
 
 app: Flask = Flask(__name__)
 SLACKMETHODS = ['GET', 'POST']
@@ -35,6 +36,22 @@ def weather() -> str:
 
 @app.route('/random', methods=SLACKMETHODS)
 def randomint() -> str:
+    """
+    returns a random int between 1 and 10
+    """
+    minimum: int = 1
+    maximum: int = 10
+    return f"A random number between {minimum} and {maximum} is {random.randint(minimum,maximum)}"
+
+@app.route('/pi', methods=SLACKMETHODS)
+def pi_to_dec_places() -> str:
+    """
+    returns a random int between 1 and 10
+    """
+    try:
+        dp = int(request.values.get('text'))
+    except expression as identifier:
+        pass
     minimum: int = 1
     maximum: int = 10
     return f"A random number between {minimum} and {maximum} is {random.randint(minimum,maximum)}"
