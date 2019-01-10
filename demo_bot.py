@@ -1,18 +1,18 @@
 from flask import Flask, request
 
-app = Flask(__name__)
+app : Flask = Flask(__name__)
 SLACKMETHODS = ['GET', 'POST']
 
 @app.route("/", methods=SLACKMETHODS)
-def home():
+def home() -> str:
     return "Hello World"
 
 @app.route('/greet', methods=SLACKMETHODS)
-def greet():
+def greet() -> str:
     return f"hello {request.values.get('text')}"
 
 @app.route('/weather', methods=SLACKMETHODS)
-def weather():
+def weather() -> str:
     temp = request.values.get('text')
     if int(temp) > 30:
         print("it's so hot")
@@ -21,5 +21,4 @@ def weather():
 
 
 if __name__ == "__main__":
-    app.run()
-    
+    app.run()   
